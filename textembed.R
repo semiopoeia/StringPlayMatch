@@ -21,10 +21,10 @@ client <- openai$OpenAI(api_key = Sys.getenv("OPENAI_API_KEY"))
 #The people around me have fatigue. -> [791, 1274, 2212, 757, 617, 36709, 13]  (count: 7 )
 #total of 20 tokens
 texts <- c(
-"Exam scores had a mean or 65, a median of 75, and a mode of 85. What is the shape of this distribution?", 
-"To assure adequate availability of allergy mitigating medications during the spring months a pharmacy took a count of the anti-histamines sold during the months of April and May. Which would best describe the level of measurement being used for keeping track of anti-histamine sales?", 
-"To mitigate the potential for cheating on an exam, four different versions of the exam were created. In this scenario, what type of reliability might we be most concerned with?",
-"Scores from a skills test were normally distributed with a mean of 50 and a Standard Deviation of 10, approximately what percentage of the scores will fall between 30 and 70?")
+"My energy is low.", 
+"I feel tired.", 
+"I am tired.",
+"The people around me have fatigue.")
 
 embedding_result <- client$embeddings$create(
   model = "text-embedding-3-small",
@@ -49,5 +49,6 @@ cor(ebdf)
 
 embedmat<-write.table(embedding_matrix,"embedEG4examitems.txt",sep="\t",
 		col.names=F,row.names=F)
+
 
 class(embeddings)
