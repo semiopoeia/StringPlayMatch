@@ -46,7 +46,7 @@ dtm_matrix <- as.matrix(dtm)
 
 #search term/phrase to match across documents
 search_term <- 
-"To mitigate the potential for cheating on an exam, four different versions of the exam were created. In this scenario, what type of reliability might we be most concerned with?"
+"In this scenario, what type of reliability might we be most concerned with?"
 
 #exact matches
 exact_matches <- lapply(documents, function(doc) {
@@ -91,5 +91,6 @@ names(match_locations) <- names(documents)
 
 cat("Match Locations:\n")
 print(match_locations)
+
 
 
